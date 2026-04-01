@@ -1,0 +1,13 @@
+# Render.yaml Configuration for TCGCardHunters Backend
+services:
+  - type: web
+    name: tcgcardhunters-backend
+    env: node
+    plan: free
+    buildCommand: "cd server && npm install"
+    startCommand: "node server/index.js"
+    env:
+      MONGODB_URI: "<your-mongodb-uri>"
+      PAYPAL_CLIENT_ID: "<your-paypal-client-id>"
+      PAYPAL_SECRET: "<your-paypal-secret>"
+      FRONTEND_URL: "<your-frontend-url>"
